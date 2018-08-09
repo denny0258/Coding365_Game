@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import sys
-sys.path.append("./Model")
+sys.path.append(".\\Model")
 import Central_control
 
 
