@@ -3,5 +3,3 @@
 
 def hand():
     pass
-def Test(Test):
-    pass

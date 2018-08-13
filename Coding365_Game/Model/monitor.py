@@ -7,6 +7,11 @@ def Test(Test):
 '''
 def Check_21():
     pass
+<<<<<<< HEAD
 def Test(Test):
     pass
 '''
+=======
+def Test(Test_Data):
+    pass
+>>>>>>> SORA/Develop

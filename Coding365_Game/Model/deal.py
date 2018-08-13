@@ -5,5 +5,5 @@
 
 def Take_card():
     pass
-def Test(Test):
+def Test(Test_Data):
     pass
