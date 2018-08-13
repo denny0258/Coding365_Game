@@ -19,5 +19,5 @@ def Test(Test_Data):
     adapter.stop()
     d = {}
     d[result] = True
-    print('debug from deal: result:', d)
+    # print('debug from deal: result:', d)
     return d
