@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
-
-def Get_people():
-    pass
+#安安
 def Test(Test_Data):
-    pass
+    if Test_Data.get("Hello",None) == True :
+        return {"World":True}
+ #   pass
+#def Test(Test_Data):
+ #   pass
