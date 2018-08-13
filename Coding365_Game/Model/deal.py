@@ -2,8 +2,8 @@
 
 #發牌 陳敦捷
 #python c 對接 邱柏翰
-
-from ..Adapter import cAdapter
+print('wfwef')
+from Adapter import cAdapter
 import os
 
 def Take_card():
