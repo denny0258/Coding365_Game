@@ -4,12 +4,15 @@
 # 啟動之後請確保各自開發的程序無 ERROR
 
 import sys
+import os
 sys.path.append(".\\Model")
-from Tests import Test
-import Central_control
+# from Tests import Test
+# import Central_control
+
+print(os.getcwd())
 
 def Start():
-    Test()
+    # Test()
     # Central_control.start()
     pass
 
