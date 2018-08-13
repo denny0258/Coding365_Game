@@ -15,7 +15,7 @@ def Test(Test_Data):
             s+=i
     adapter = cAdapter.GetAdapter(os.path.abspath("./model/deal.exe"))
     adapter.start()
-    result = adapter.call(s+'\r\n').strip()
+    result = adapter.call(s)
     adapter.stop()
     d = {}
     d[result] = True

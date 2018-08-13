@@ -9,8 +9,8 @@ class Adapter:
     def start(self):
         self.proc = Popen([self.path], stdout=PIPE, stdin=PIPE, stderr=STDOUT)
     
-    def call(self,input):
-        output = self.proc.communicate(input=input.encode())[0]
+    def call(self,input, end='\r\n'):
+        output = self.proc.communicate(input=(input+end).encode())[0]
         return output.decode()
     
     def stop(self):
