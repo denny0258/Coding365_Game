@@ -5,7 +5,7 @@ int main(){
    scanf("%s",str);
 
    if(strcmp(str,"Hello") ==0 )
-      printf("world");
+      printf("World");
    else
       printf("ERROR");
 
