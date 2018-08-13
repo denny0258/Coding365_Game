@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
 
-def Test(Test):
-    if Test.get("Hello", None) == True:
+def Test(Test_Data):
+    if Test_Data.get("Hello", None) == True:
         return {"World":True} 
