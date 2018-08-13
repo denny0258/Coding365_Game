@@ -2,5 +2,5 @@
 #金錢系統
 def Get_money():
     pass
-def Test(Test):
+def Test(Test_Data):
     pass
