@@ -1,13 +1,13 @@
 #include<stdio.h>
 #include<string.h>
 int main(){
-char str[10] ={};
-scanf("%s",str);
+   char str[10] ={0};
+   scanf("%s",str);
 
-if(strcmp(str,"Holle") ==0 )
-    printf("world");
-else
-    printf("ERROR");
+   if(strcmp(str,"Hello") ==0 )
+      printf("world");
+   else
+      printf("ERROR");
 
-return 0;
+   return 0;
 }
