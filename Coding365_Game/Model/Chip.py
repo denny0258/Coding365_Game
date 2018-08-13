@@ -2,3 +2,5 @@
 
 def Get_Chip():
     pass
+def Test(Test):
+    pass

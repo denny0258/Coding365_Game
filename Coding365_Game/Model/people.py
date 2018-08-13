@@ -2,3 +2,5 @@
 
 def Get_people():
     pass
+def Test(Test):
+    pass

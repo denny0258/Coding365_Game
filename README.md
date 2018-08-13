@@ -181,7 +181,7 @@ GitHub: https://github.com/denny0258/Coding365_Game
 
 
 #### Leaderboard 排行榜
-- 紀錄所有資料
+- Get_Leader紀錄所有資料
     - 接收 winner輸出勝利者 結果
     - 接收 money 資料
     - 接收 Get_Chip 資料
