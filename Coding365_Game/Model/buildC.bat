@@ -1,1 +1,1 @@
-gcc .\Model\deal.c -o .\Model\deal.exe
+gcc .\deal.c -o .\deal.exe

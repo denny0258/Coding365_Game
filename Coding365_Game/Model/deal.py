@@ -13,10 +13,11 @@ def Test(Test_Data):
     for i in Test_Data:
         if Test_Data[i]:
             s+=i
-    adapter = cAdapter.GetAdapter(os.path.abspath("./deal.exe"))
+    adapter = cAdapter.GetAdapter(os.path.abspath("./model/deal.exe"))
     adapter.start()
-    result = adapter.call(s)
+    result = adapter.call(s+'\r\n').strip()
     adapter.stop()
     d = {}
     d[result] = True
+    print('debug from deal: result:', d)
     return d
