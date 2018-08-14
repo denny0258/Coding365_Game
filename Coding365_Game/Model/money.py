@@ -22,10 +22,10 @@ def settle_accounts():  # 模擬勝負結算 function
 
 def Get_money():
     Chip_Remain = {}
-    [Chip_Remain.update( {key: value['InitChip'] - value['Chip']})for key, value in Get_Chip().items()]
-    [Chip_Remain.update( {key: value + reduce(add, [chip for chip in Chip_Remain.values()])})for key, value in Chip_Remain.items()if settle_accounts()['Win'] in key]
-
+    [Chip_Remain.update({key: value['InitChip'] - value['Chip']})for key, value in Get_Chip().items()]
+    [Chip_Remain.update({key: value + reduce(add, [chip['Chip'] for chip in Get_Chip().values()])})for key, value in Chip_Remain.items()if settle_accounts()['Win'] in key]
     return(Chip_Remain)
+
 
 print(Get_money())
 
