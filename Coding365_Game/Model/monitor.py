@@ -6,7 +6,7 @@ def Check_21(income):
     dict1={}
     for j in income.keys():
         dict1[j]=bool1
-        if income[j]["life"]==False:
+        if income[j]["life"]=='False':
             dict1[j]="False"
         else:
             point=0
