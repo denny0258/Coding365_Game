@@ -1,6 +1,23 @@
 # -*- coding: utf-8 -*-
 
-def Get_Chip():
-    pass
+def Get_Chip(income):
+    =50
+    =5
+    
+    
+
+
+
+
+
 def Test(Test_Data):
-    pass
+    if Test_Data.get("Hello", None) == True:
+        return {"World": True}
+'''
+回傳規格如下:
+
+  {
+      "Player_1_Chip" : number
+  }
+  number : (0~9)
+'''
