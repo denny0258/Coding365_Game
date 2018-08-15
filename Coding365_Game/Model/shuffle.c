@@ -8,7 +8,7 @@ struct poker_t {
 }poker[52];
 void init(struct poker_t *poker){
     int index =0;
-    for(int i=1 ;i<=4 ; i++){
+    for(int i=0 ;i<4 ; i++){
         for(int j=1;j<=13;j++){
           poker[index].color = i ;
           poker[index].num = j ;
@@ -29,22 +29,8 @@ void shuffle(struct poker_t *poker, int length){
 }
 
 void deal(struct poker_t *poker,int index){
-     switch(poker[index].color){
-       case 1:
-         printf("(s,%d)\n",poker[index].num);
-         break ;
-       case 2:
-         printf("(h,%d)\n",poker[index].num);
-         break ;
-       case 3:
-         printf("(d,%d)\n",poker[index].num);
-         break ;
-       case 4:
-         printf("(c,%d)\n",poker[index].num);
-         break ;
-       default:
-         break ;
-     }
+     char Poker_str[] = "shdc";
+     printf("(%c,%d)\n",Poker_str[poker[index].color],poker[index].num);
 }
 
 int main(){
@@ -71,7 +57,7 @@ int main(){
 }
 /*
   輸入A 離開迴圈停止程式
-  輸入B 發一張牌 發完52張停止程式
+  輸入B 發一張牌 發完52張回傳None停止程式
 
   input : B   output :(s,10)
   input : B   output :(d,4)
