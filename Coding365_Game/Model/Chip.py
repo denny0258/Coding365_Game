@@ -17,7 +17,6 @@ def Test(Test_Data):
 回傳規格如下:
 
   {
-      "Player_1_Chip" : number
+      "Player_1_Chip" : {'Chip':1, 'InitChip':10}
   }
-  number : (0~9)
 '''
