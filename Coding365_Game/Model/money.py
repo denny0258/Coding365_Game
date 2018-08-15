@@ -27,11 +27,10 @@ def Get_money():
     return(Chip_Remain)
 
 
-print(Get_money())
-
-
 if __name__ == '__main__':
     Get_money()
+
+    print(Get_money())
 
 
 def Test(Test_Data):
