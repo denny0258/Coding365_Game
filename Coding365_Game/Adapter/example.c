@@ -3,6 +3,7 @@
 // and output to standard output.
 int main()
 {
+    printf("hello\n");
     int a;
     while (1)
     {
