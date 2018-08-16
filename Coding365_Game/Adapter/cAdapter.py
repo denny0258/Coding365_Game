@@ -1,5 +1,6 @@
 from subprocess import Popen, PIPE, STDOUT
 
+
 class Adapter:
 
     def __init__(self, path):
@@ -8,15 +9,17 @@ class Adapter:
 
     def start(self):
         self.proc = Popen([self.path], stdout=PIPE, stdin=PIPE, stderr=STDOUT)
-    
-    def call(self,input, end='\r\n'):
-        output = self.proc.communicate(input=(input+end).encode())[0]
-        return output.decode()
-    
+
+    def write(self, input, end='\r\n'):
+        self.proc.stdin.write((input + end).encode())
+        self.proc.stdin.close()
+
+    def readline(self):
+        return self.proc.stdout.readline().decode().strip()
+
     def stop(self):
         self.proc.kill()
 
 
 def GetAdapter(path):
     return Adapter(path)
-    
