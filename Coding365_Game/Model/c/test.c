@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+
 struct poker_t
 {
     int num;
