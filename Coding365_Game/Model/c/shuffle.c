@@ -42,7 +42,7 @@ int do_next(){
   index++;
   return 1;
 }
-void do_inti(){
+void do_init(){
   init(poker);
 }
 int main(){
