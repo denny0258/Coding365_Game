@@ -3,19 +3,11 @@
 #發牌 陳敦捷
 #python c 對接 邱柏翰
 
-from Model.c import test
-
-
+from Model.c import shuffle
 
 def Take_card(inputs):
-    if inputs["RE"]:
-        test.shuffle()
-    
-    card = test.get()
+    card = shuffle.Take_Card(inputs["RE"])
     return {"Card": card}
-
-
-
 
 
 # 先亂寫的
