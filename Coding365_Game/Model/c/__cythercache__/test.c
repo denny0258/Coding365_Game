@@ -1069,10 +1069,8 @@ static const char __pyx_k_ok[] = "ok";
 static const char __pyx_k_chr[] = "chr";
 static const char __pyx_k_get[] = "get";
 static const char __pyx_k_main[] = "__main__";
-static const char __pyx_k_suit[] = "suit";
 static const char __pyx_k_test[] = "test";
 static const char __pyx_k_wrap[] = "wrap";
-static const char __pyx_k_number[] = "number";
 static const char __pyx_k_test_2[] = "__test__";
 static const char __pyx_k_shuffle[] = "shuffle";
 static const char __pyx_k_test_pyx[] = "test.pyx";
@@ -1087,11 +1085,9 @@ static PyObject *__pyx_n_s_chr;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_get;
 static PyObject *__pyx_n_s_main;
-static PyObject *__pyx_n_s_number;
 static PyObject *__pyx_n_s_ok;
 static PyObject *__pyx_n_s_shuffle;
 static PyObject *__pyx_kp_s_stringsource;
-static PyObject *__pyx_n_s_suit;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_test_2;
 static PyObject *__pyx_kp_s_test_pyx;
@@ -1205,7 +1201,7 @@ static PyObject *__pyx_pf_4test_2get(CYTHON_UNUSED PyObject *__pyx_self) {
  *     ok = next()
  *     if ok==0:             # <<<<<<<<<<<<<<
  *         return None
- *     return {
+ *     return ( chr(suit),  number )
  */
   __pyx_t_1 = ((__pyx_v_ok == 0) != 0);
   if (__pyx_t_1) {
@@ -1214,8 +1210,7 @@ static PyObject *__pyx_pf_4test_2get(CYTHON_UNUSED PyObject *__pyx_self) {
  *     ok = next()
  *     if ok==0:
  *         return None             # <<<<<<<<<<<<<<
- *     return {
- *         "suit": chr(suit),
+ *     return ( chr(suit),  number )
  */
     __Pyx_XDECREF(__pyx_r);
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
@@ -1226,48 +1221,33 @@ static PyObject *__pyx_pf_4test_2get(CYTHON_UNUSED PyObject *__pyx_self) {
  *     ok = next()
  *     if ok==0:             # <<<<<<<<<<<<<<
  *         return None
- *     return {
+ *     return ( chr(suit),  number )
  */
   }
 
   /* "test.pyx":15
  *     if ok==0:
  *         return None
- *     return {             # <<<<<<<<<<<<<<
- *         "suit": chr(suit),
- *         "number": number
+ *     return ( chr(suit),  number )             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-
-  /* "test.pyx":16
- *         return None
- *     return {
- *         "suit": chr(suit),             # <<<<<<<<<<<<<<
- *         "number": number
- *     }
- */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_char(suit); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyInt_From_char(suit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_chr, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_chr, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyInt_From_int(number); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_suit, __pyx_t_4) < 0) __PYX_ERR(0, 16, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-
-  /* "test.pyx":17
- *     return {
- *         "suit": chr(suit),
- *         "number": number             # <<<<<<<<<<<<<<
- *     }
- */
-  __pyx_t_4 = __Pyx_PyInt_From_int(number); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 17, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_number, __pyx_t_4) < 0) __PYX_ERR(0, 16, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_r = __pyx_t_2;
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_2);
+  __pyx_t_3 = 0;
   __pyx_t_2 = 0;
+  __pyx_r = __pyx_t_4;
+  __pyx_t_4 = 0;
   goto __pyx_L0;
 
   /* "test.pyx":11
@@ -1554,11 +1534,9 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_get, __pyx_k_get, sizeof(__pyx_k_get), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
-  {&__pyx_n_s_number, __pyx_k_number, sizeof(__pyx_k_number), 0, 0, 1, 1},
   {&__pyx_n_s_ok, __pyx_k_ok, sizeof(__pyx_k_ok), 0, 0, 1, 1},
   {&__pyx_n_s_shuffle, __pyx_k_shuffle, sizeof(__pyx_k_shuffle), 0, 0, 1, 1},
   {&__pyx_kp_s_stringsource, __pyx_k_stringsource, sizeof(__pyx_k_stringsource), 0, 0, 1, 0},
-  {&__pyx_n_s_suit, __pyx_k_suit, sizeof(__pyx_k_suit), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_test_2, __pyx_k_test_2, sizeof(__pyx_k_test_2), 0, 0, 1, 1},
   {&__pyx_kp_s_test_pyx, __pyx_k_test_pyx, sizeof(__pyx_k_test_pyx), 0, 0, 1, 0},
@@ -1566,7 +1544,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_chr = __Pyx_GetBuiltinName(__pyx_n_s_chr); if (!__pyx_builtin_chr) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_builtin_chr = __Pyx_GetBuiltinName(__pyx_n_s_chr); if (!__pyx_builtin_chr) __PYX_ERR(0, 15, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;

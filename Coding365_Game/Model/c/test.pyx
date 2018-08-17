@@ -12,7 +12,4 @@ def get():
     ok = next()
     if ok==0:
         return None
-    return {
-        "suit": chr(suit),
-        "number": number
-    }
+    return ( chr(suit),  number )
