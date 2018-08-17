@@ -1,0 +1,1 @@
+gcc .\deal.c -o .\deal.exe
