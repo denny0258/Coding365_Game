@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
 
-def winner():
+def winner(players):
     pass
+
+
 def Test(Test_Data):
     pass
