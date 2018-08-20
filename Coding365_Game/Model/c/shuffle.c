@@ -32,6 +32,7 @@ void shuffle(struct poker_t *poker, int length){  //隨機洗牌
 }
 int index =0;
 void do_shuffle(){  //執行洗牌功能
+    index = 0;
     shuffle(poker,52);
 }
 int do_next(){
@@ -42,7 +43,7 @@ int do_next(){
   index++;
   return 1;
 }
-void do_inti(){
+void do_init(){
   init(poker);
 }
 int main(){
