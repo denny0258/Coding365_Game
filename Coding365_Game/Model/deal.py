@@ -4,9 +4,9 @@
 # python c 對接 邱柏翰
 
 try:
-    from Model.c import shuffle
+    from Model.C_Data import shuffle
 except:
-    from c import shuffle
+    from C_Data import shuffle
 
 
 def Take_card(inputs):
@@ -21,7 +21,7 @@ def Take_card(inputs):
 # 2. 52 張牌後應該顯示 None 表示沒牌
 # 3. 重新洗牌後再進行一次步驟 1 確定可重複洗牌發牌
 # return True: 測試通過  False: 測試失敗
-def Test():
+def Test_inside():
     print('deal.py 發牌測試')
 
     for times in range(3):  # 總共進行三次測試
@@ -89,5 +89,10 @@ def Test():
     return True
 
 
+def Test(Test_Data):
+    if Test_Data.get("Hello", None) == True:
+        return {"World": True}
+
+
 if __name__ == "__main__":
-    Test()
+    Test_inside()
