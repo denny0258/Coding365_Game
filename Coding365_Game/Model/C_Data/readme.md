@@ -1,0 +1,1 @@
+run `build.py` to build `.pyd` from `.c`
