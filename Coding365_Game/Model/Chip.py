@@ -8,9 +8,9 @@ def Get_Chip(income):
     money={}
     for j in income.keys():
         if income[j]<5:
-            dict1[j]=False
+            dict1[j]="False"
         else:
-            dict1[j]=True
+            dict1[j]="True"
             money[j]=income[j]
     return dict1
 
@@ -25,22 +25,22 @@ def Winner(winners):
     get_chip=[]
     for i in (winners.values()):
         get_chip.append(i)
-    winnercount=get_chip.count(True)
+    winnercount=get_chip.count("True")
     average=playercount//winnercount
     for i in winners.keys():
-        if winners[i]==True:
+        if winners[i]=="True":
             dict2[i]=average
     return dict2
 
 
 # income={"Player_1":5,"Player_2":5,"Player_3":5,"Player_4":5,"Player_5":5}
-# winners={'Player_1': False, 'Player_2': False, 'Player_3': False, 'Player_4': False, 'Player_5': True}
+# winners={'Player_1': 'False', 'Player_2': 'False', 'Player_3': 'False', 'Player_4': 'False', 'Player_5': 'True'}
 # print(Get_Chip(income))
 # print(Winner(winners))
 # print()
 
 # income1={"Player_1":25,"Player_2":35,"Player_3":15,"Player_4":2,"Player_5":5}
-# winners1={'Player_1': False, 'Player_2': True, 'Player_3': False, 'Player_4': False, 'Player_5': True}
+# winners1={'Player_1': 'False', 'Player_2': 'True', 'Player_3': 'False', 'Player_4': 'False', 'Player_5': 'True'}
 # print(Get_Chip(income1))
 # print(Winner(winners1))
 
