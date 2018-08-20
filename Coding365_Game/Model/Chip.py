@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> cb3c5f21d4a9174690a1151c772cf916a6725b5e
 dict1 = {}
 playercount = 0
 money = {}
@@ -72,7 +79,25 @@ def Test_inside():
 if __name__ == "__main__":
     Test_inside()
 
+<<<<<<< HEAD
+=======
+>>>>>>> fda57d34351428c09effdae579738e63adcff2d3
+>>>>>>> SORA/Develop
+>>>>>>> cb3c5f21d4a9174690a1151c772cf916a6725b5e
 
 def Test(Test_Data):
+<<<<<<< HEAD
     if Test_Data.get("Hello", None) == True:
         return {"World": True}
+=======
+<<<<<<< HEAD
+    pass
+=======
+<<<<<<< HEAD
+    pass
+=======
+    if Test_Data.get("Hello", None) == True:
+        return {"World": True}
+>>>>>>> fda57d34351428c09effdae579738e63adcff2d3
+>>>>>>> SORA/Develop
+>>>>>>> cb3c5f21d4a9174690a1151c772cf916a6725b5e
