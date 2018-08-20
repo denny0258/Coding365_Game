@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-<<<<<<< HEAD
-=======
+
 dict1 = {}
 playercount = 0
 money = {}
@@ -73,14 +72,7 @@ def Test_inside():
 if __name__ == "__main__":
     Test_inside()
 
->>>>>>> fda57d34351428c09effdae579738e63adcff2d3
 
-def Get_Chip():
-    pass
 def Test(Test_Data):
-<<<<<<< HEAD
-    pass
-=======
     if Test_Data.get("Hello", None) == True:
         return {"World": True}
->>>>>>> fda57d34351428c09effdae579738e63adcff2d3
