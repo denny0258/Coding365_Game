@@ -23,14 +23,6 @@ def check_people():
     return dict1
 
 
-def Test_inside():
-    print(check_people())
-
-
-if __name__ == "__main__":
-    Test_inside()
-
-
 def Test(Test_Data):
     if Test_Data.get("Hello", None) == True:
         return {"World": True}
