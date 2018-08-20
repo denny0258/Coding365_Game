@@ -32,16 +32,18 @@ void set_card(int pid, int cid, int suit, int number){
 }
 
 void sum(int pid , int count){
+    play_info[pid].sum =0;
+
      for(int i=0 ;i<count;i++){
        if(play_info[pid].card[i].number >= 10)
-          play_info[pid].sum += 10 ;   
+          play_info[pid].sum += 10;   
        else 
           play_info[pid].sum += play_info[pid].card[i].number ; 
      }
 }
 void sum_total(){
     for(int i=0;i<play_num;i++){
-      if(play_info[i].life == 0)
+      if(play_info[i].life == 1)
          sum(i,play_info[i].count);
       else continue ;
     }
@@ -49,9 +51,9 @@ void sum_total(){
 
 void find_max(){
     sum_total();
-    int MAX =INT_MIN ;
+    max_point =INT_MIN ;
     for(int i=0 ; i<play_num ; i++)
-       if(play_info[i].sum > MAX)
+       if(play_info[i].sum > max_point)
           max_point = play_info[i].sum ;
 }
 

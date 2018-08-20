@@ -1,4 +1,9 @@
 cdef extern from '../winner.c':
+
+    # debug
+    cpdef int max_point
+
+
     # 設定玩家數量
     # count: 玩家數量
     cpdef void set_player_count(int count)
@@ -22,3 +27,10 @@ cdef extern from '../winner.c':
     # pid: 玩家編號: 0~19
     # return: 0:輸 1:贏家
     cpdef int get_is_winner(int pid)
+
+    # call this to activate
+    cpdef void winner()
+
+
+def get_max_point():
+    return max_point

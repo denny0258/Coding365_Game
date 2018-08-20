@@ -296,31 +296,84 @@ body.cython { font-family: courier; font-size: 12; }
 </p>
 <p>Raw output: <a href="winner.c">winner.c</a></p>
 <div class="cython"><pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">01</span>: cdef extern from '../winner.c':</pre>
-<pre class='cython code score-8 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyDict_NewPresized</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)</span>
+<pre class='cython code score-8 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyDict_NewPresized</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
-  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_test, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 1, __pyx_L1_error)</span>
+  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_test, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 1, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-</pre><pre class="cython line score-0">&#xA0;<span class="">02</span>:     # 設定玩家數量</pre>
-<pre class="cython line score-0">&#xA0;<span class="">03</span>:     # count: 玩家數量</pre>
-<pre class="cython line score-0">&#xA0;<span class="">04</span>:     cpdef void set_player_count(int count)</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">02</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">03</span>:     # debug</pre>
+<pre class="cython line score-0">&#xA0;<span class="">04</span>:     cpdef int max_point</pre>
 <pre class="cython line score-0">&#xA0;<span class="">05</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">06</span>:     # 設定玩家牌數量與生死狀態 (死代表超過21)</pre>
-<pre class="cython line score-0">&#xA0;<span class="">07</span>:     # pid: 玩家編號</pre>
-<pre class="cython line score-0">&#xA0;<span class="">08</span>:     # count: 玩家持有牌數量</pre>
-<pre class="cython line score-0">&#xA0;<span class="">09</span>:     # life: 0:死 1:生</pre>
-<pre class="cython line score-0">&#xA0;<span class="">10</span>:     cpdef void set_card_count(int pid, int count, int life)</pre>
-<pre class="cython line score-0">&#xA0;<span class="">11</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">12</span>:     # 設定玩家牌面</pre>
-<pre class="cython line score-0">&#xA0;<span class="">13</span>:     # pid: 玩家編號，0~19</pre>
-<pre class="cython line score-0">&#xA0;<span class="">14</span>:     # cid: 牌編號, 0~19: 第 n 張牌</pre>
-<pre class="cython line score-0">&#xA0;<span class="">15</span>:     #</pre>
-<pre class="cython line score-0">&#xA0;<span class="">16</span>:     # 牌面:</pre>
-<pre class="cython line score-0">&#xA0;<span class="">17</span>:     # suit: 1 黑桃 2 紅心 3 菱形 4 梅花</pre>
-<pre class="cython line score-0">&#xA0;<span class="">18</span>:     # number: 1~13</pre>
-<pre class="cython line score-0">&#xA0;<span class="">19</span>:     cpdef void set_card(int pid, int cid, int suit, int number)</pre>
-<pre class="cython line score-0">&#xA0;<span class="">20</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">21</span>:     # 是否為贏家</pre>
-<pre class="cython line score-0">&#xA0;<span class="">22</span>:     # pid: 玩家編號: 0~19</pre>
-<pre class="cython line score-0">&#xA0;<span class="">23</span>:     # return: 0:輸 1:贏家</pre>
-<pre class="cython line score-0">&#xA0;<span class="">24</span>:     cpdef int get_is_winner(int pid)</pre>
-</div></body></html>
+<pre class="cython line score-0">&#xA0;<span class="">06</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">07</span>:     # 設定玩家數量</pre>
+<pre class="cython line score-0">&#xA0;<span class="">08</span>:     # count: 玩家數量</pre>
+<pre class="cython line score-0">&#xA0;<span class="">09</span>:     cpdef void set_player_count(int count)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">10</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">11</span>:     # 設定玩家牌數量與生死狀態 (死代表超過21)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">12</span>:     # pid: 玩家編號</pre>
+<pre class="cython line score-0">&#xA0;<span class="">13</span>:     # count: 玩家持有牌數量</pre>
+<pre class="cython line score-0">&#xA0;<span class="">14</span>:     # life: 0:死 1:生</pre>
+<pre class="cython line score-0">&#xA0;<span class="">15</span>:     cpdef void set_card_count(int pid, int count, int life)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">16</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">17</span>:     # 設定玩家牌面</pre>
+<pre class="cython line score-0">&#xA0;<span class="">18</span>:     # pid: 玩家編號，0~19</pre>
+<pre class="cython line score-0">&#xA0;<span class="">19</span>:     # cid: 牌編號, 0~19: 第 n 張牌</pre>
+<pre class="cython line score-0">&#xA0;<span class="">20</span>:     #</pre>
+<pre class="cython line score-0">&#xA0;<span class="">21</span>:     # 牌面:</pre>
+<pre class="cython line score-0">&#xA0;<span class="">22</span>:     # suit: 1 黑桃 2 紅心 3 菱形 4 梅花</pre>
+<pre class="cython line score-0">&#xA0;<span class="">23</span>:     # number: 1~13</pre>
+<pre class="cython line score-0">&#xA0;<span class="">24</span>:     cpdef void set_card(int pid, int cid, int suit, int number)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">25</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">26</span>:     # 是否為贏家</pre>
+<pre class="cython line score-0">&#xA0;<span class="">27</span>:     # pid: 玩家編號: 0~19</pre>
+<pre class="cython line score-0">&#xA0;<span class="">28</span>:     # return: 0:輸 1:贏家</pre>
+<pre class="cython line score-0">&#xA0;<span class="">29</span>:     cpdef int get_is_winner(int pid)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">30</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">31</span>:     # call this to activate</pre>
+<pre class="cython line score-0">&#xA0;<span class="">32</span>:     cpdef void winner()</pre>
+<pre class="cython line score-0">&#xA0;<span class="">33</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">34</span>: </pre>
+<pre class="cython line score-9" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">35</span>: def get_max_point():</pre>
+<pre class='cython code score-9 '>/* Python wrapper */
+static PyObject *__pyx_pw_6winner_1get_max_point(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_6winner_get_max_point[] = "File: winner.pyx (starting at line 35)";
+static PyMethodDef __pyx_mdef_6winner_1get_max_point = {"get_max_point", (PyCFunction)__pyx_pw_6winner_1get_max_point, METH_NOARGS, __pyx_doc_6winner_get_max_point};
+static PyObject *__pyx_pw_6winner_1get_max_point(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("get_max_point (wrapper)", 0);
+  __pyx_r = __pyx_pf_6winner_get_max_point(__pyx_self);
+
+  /* function exit code */
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6winner_get_max_point(CYTHON_UNUSED PyObject *__pyx_self) {
+  PyObject *__pyx_r = NULL;
+  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
+  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("get_max_point", 0);
+/* … */
+  /* function exit code */
+  __pyx_L1_error:;
+  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("winner.get_max_point", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
+  <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
+  return __pyx_r;
+}
+/* … */
+  __pyx_t_1 = PyCFunction_NewEx(&amp;__pyx_mdef_6winner_1get_max_point, NULL, __pyx_n_s_winner);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_get_max_point, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 35, __pyx_L1_error)</span>
+  <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
+</pre><pre class="cython line score-3" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">36</span>:     return max_point</pre>
+<pre class='cython code score-3 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
+  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyInt_From_int</span>(max_point);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)</span>
+  <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+</pre></div></body></html>
