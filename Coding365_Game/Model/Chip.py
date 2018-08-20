@@ -37,6 +37,7 @@ def Winner(winners):
     return dict2
 
 
+<<<<<<< HEAD
 def Test_inside():
     # ------------------------------------------------------------
     income_1 = {"Player_1": 5, "Player_2": 5,
@@ -77,6 +78,8 @@ if __name__ == "__main__":
 
 def Get_Chip():
     pass
+=======
+>>>>>>> 8f09af6a37cf0c83bbb33ebe3d0419cd44e9d17d
 def Test(Test_Data):
 <<<<<<< HEAD
     pass

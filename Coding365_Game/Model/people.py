@@ -48,14 +48,6 @@ print(check_people())
 
 >>>>>>> 1d6219b79df3d206eaf5d75095c4756324178e86
 
-def Test_inside():
-    print(check_people())
-
-
-if __name__ == "__main__":
-    Test_inside()
-
-
 def Test(Test_Data):
     if Test_Data.get("Hello", None) == True:
         return {"World": True}

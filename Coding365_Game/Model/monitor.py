@@ -26,6 +26,7 @@ def Check_21(income):
 def Test(Test_Data):
     if Test_Data.get("Hello", None) == True:
         return {"World": True}
+<<<<<<< HEAD
 
 
 def Test_inside():
@@ -49,3 +50,5 @@ def Test_inside():
 
 if __name__ == "__main__":
     Test_inside()
+=======
+>>>>>>> 8f09af6a37cf0c83bbb33ebe3d0419cd44e9d17d
