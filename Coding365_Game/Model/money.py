@@ -1,36 +1,38 @@
 # -*- coding: utf-8 -*-
-# 金錢系統``
+# 金錢系統
 
-from operator import add
-from operator import sub
-from functools import reduce
+peoples = ["Player_1","Player_2","Player_3","Player_4"]  #最一開始的人
+delta_Money = {"Player_3":75}   #贏得總量
+withdraw = {"Player_1": -60, "Player_2": -25, "Player_3": -15, "Player_4": -55}
 
+people_Account = {}
 
-def Get_Chip():  # 模擬下注 function
-    return{
-        'player_1': {'Chip': 1, 'InitChip': 10},
-        'player_2': {'Chip': 2, 'InitChip': 10},
-        'player_3': {'Chip': 3, 'InitChip': 10},
-    }
+def Get_money(people):
+    global people_Account
+    [people_Account.update({key: people_Account.get(key, 50)}) for key in people]
+    return(people_Account)
 
+def Add_money(delta_Money_1):
+    global people_Account
+    [people_Account.update({key: people_Account.get(key, 0) + delta_Money_1.get(key, 0)}) for key, value in people_Account.items()]
+    
+def Take_money(withdraw_1):
+    global people_Account
+    A = {}
+    for k,v in withdraw_1.items():
+        if people_Account.get(k,50) + v < 0:
+            A.update({k:False})
+        else:
+            A.update({k:True})
 
-def settle_accounts():  # 模擬勝負結算 function
-    return{
-        'Win': 'player_1'
-    }
+    return A
 
+    
+if __name__ == "__main__":
+    print(Get_money(peoples))
+    print(Add_money(delta_Money))
+    print(Take_money(withdraw))
 
-def Get_money():
-    Chip_Remain = {}
-    [Chip_Remain.update({key: value['InitChip'] - value['Chip']})for key, value in Get_Chip().items()]
-    [Chip_Remain.update({key: value + reduce(add, [chip['Chip'] for chip in Get_Chip().values()])})for key, value in Chip_Remain.items()if settle_accounts()['Win'] in key]
-    return(Chip_Remain)
-
-
-if __name__ == '__main__':
-    Get_money()
-
-    print(Get_money())
 
 
 def Test(Test_Data):
