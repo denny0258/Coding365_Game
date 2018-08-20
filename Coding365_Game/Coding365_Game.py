@@ -13,7 +13,7 @@ import Central_control
 
 
 def Start():
-    # Test()
+    Test()
     # Central_control.start()
     pass
 
