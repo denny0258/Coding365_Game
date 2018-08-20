@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+# -*- coding: utf-8 -*-
+>>>>>>> OK
 dict1 = {}
 playercount = 0
 money = {}
