@@ -12,7 +12,6 @@ import Leaderboard
 import Central_control
 import settle_accounts
 import Player_Control
-from pprint import pprint
 
 
 def start():
@@ -23,7 +22,7 @@ def start():
         players = join_game(players)
         start_game(players)
 
-        pprint("go go next round? (y/n)")
+        print("go go next round? (y/n)")
         if input().strip().lower() == 'y':
             pass
         else:
@@ -32,7 +31,6 @@ def start():
 
 def setup_peoples():
     players = []
-    need_shuffle = True
 
     people_info = people.check_people()
 
@@ -42,7 +40,7 @@ def setup_peoples():
     for i in range(people_info["computer"]):
         players.append(Player_Control.Computer_Control())
 
-    pprint("OK, Game start!")
+    print("OK, Game start!")
     return players
 
 
@@ -52,7 +50,7 @@ def join_game(players):
     players_list = [player.id for player in players]
     money_list = money.Get_money(players_list)
     for player in players:
-        pprint(player.name, "\tyou have:", money_list[player.id])
+        print(player.name, "\tyou have:", money_list[player.id])
 
         if player.join():
             query = {}
@@ -60,31 +58,33 @@ def join_game(players):
             result = money.Take_money(query)[player.id]
 
             if result:
-                pprint(player.name, 'joined!')
+                print(player.name, 'joined!')
             else:
-                pprint(player.name, "your money not enough")
+                print(player.name, "your money not enough")
                 remove_these_peoples.append(player)
     
-    return [player for player in player if player not in remove_these_peoples]
+    return [player for player in players if player not in remove_these_peoples]
 
 
 def start_game(players):
     # game start!
     game_running = True
+    need_shuffle = True
 
-    pprint("all player will get one card public, one card private")
+
+    print("all player will get one card public, one card private")
 
     for player in players:
         card = deal.Take_card({"RE": need_shuffle})["Card"]
         need_shuffle = False
-        pprint(player.name, "public card", card)
+        print(player.name, "public card", card)
         player.add_card(card)
 
     for player in players:
         card = deal.Take_card({"RE": need_shuffle})["Card"]
         player.add_card(card)
 
-    pprint("all players now have two cards.")
+    print("all players now have two cards.")
 
     # now enter game loop
 
@@ -112,7 +112,7 @@ def start_game(players):
 
             this_round_have_people = True
 
-            if player.take(player.cards):
+            if player.take():
                 player.cards.add_card(card)
                 need_take_card = True
 
@@ -124,8 +124,8 @@ def start_game(players):
                 })["p"]
 
                 if life_result == False:
-                    pprint("player over 21 point: ", player.name)
-                    pprint("the card he has: ", player.my_cards())
+                    print("player over 21 point: ", player.name)
+                    print("the card he has: ", player.my_cards())
                     player.life = False
 
 
