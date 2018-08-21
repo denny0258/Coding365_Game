@@ -15,8 +15,6 @@ def Take_card(inputs):
 
 
 
-
-
 def Test(Test_Data):
     if Test_Data.get("Hello", None) == True:
         return {"World": True}

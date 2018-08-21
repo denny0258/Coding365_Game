@@ -28,8 +28,48 @@ def Test_process():
     print("\n現在測試 deal\n")
     Test_deal()
     print("\n\n=====================================================\n\n")
+    print("\n現在測試 money\n")
+    Test_money()
+    print("\n\n=====================================================\n\n")
     print("\n現在測試 people\n")
     Test_people()
+
+# ========================================
+
+
+def Test_money():
+    # ------------------------------------------------------------
+    peoples_1 = ["Player_1", "Player_2", "Player_3", "Player_4"]
+    delta_Money_1 = {"Player_3": 75}
+    withdraw_1 = {"Player_1": -60, "Player_2": -
+                  25, "Player_3": -75, "Player_4": -55}
+
+    peoples_2 = ["Kanon", "clannad", "AIR", "Sam"]
+    delta_Money_2 = {"clannad": 20, "AIR": 40}
+    withdraw_2 = {"Kanon": -10, "clannad": -5, "AIR": -100, "Sam": -50}
+    # ------------------------------------------------------------
+
+    print("\nGet_money測試資料 1:", peoples_1, sep="\n")
+    print("Get_money測試結果 1:", money.Get_money(peoples_1), sep="\n")
+
+    print("\nAdd_money測試資料 1:", delta_Money_1, sep="\n")
+    money.Add_money(delta_Money_1)
+    print("Add_money測試結果 1:", money.Get_money(peoples_1), sep="\n")
+
+    print("\nTake_money測試資料 1:", withdraw_1, sep="\n")
+    print("Take_money測試結果 1:", money.Take_money(withdraw_1), sep="\n")
+
+    # ------------------------------------------------------------
+
+    print("\nGet_money測試資料 2:", peoples_2, sep="\n")
+    print("Get_money測試結果 2:", money.Get_money(peoples_2), sep="\n")
+
+    print("\nAdd_money測試資料 2:", delta_Money_2, sep="\n")
+    money.Add_money(delta_Money_2)
+    print("Add_money測試結果 2:", money.Get_money(peoples_2), sep="\n")
+
+    print("\nTake_money測試資料 2:", withdraw_2, sep="\n")
+    print("Take_money測試結果 2:", money.Take_money(withdraw_2), sep="\n")
 
 
 # ========================================
