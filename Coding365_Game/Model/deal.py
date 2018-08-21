@@ -8,12 +8,9 @@ try:
 except:
     from C_Data import shuffle
 
-
 def Take_card(inputs):
     card = shuffle.Take_Card(inputs["RE"])
     return {"Card": card}
-
-
 
 def Test(Test_Data):
     if Test_Data.get("Hello", None) == True:
