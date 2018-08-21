@@ -62,7 +62,7 @@ class Player_Control:
         if event["life"]==False:
             print("已死亡")
         else:
-            if event[i]["take"]==True:
+            if event["take"]==True:
                 print("選擇加一張牌")
             else:
                 print("選擇不加牌")
