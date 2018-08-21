@@ -8,7 +8,7 @@ def card_to_str(card):
         s+="方塊"
     else:
         s+="梅花"
-        
+
     if card[1]==1:
         s+="A"
     elif card[1]==11:
@@ -50,7 +50,7 @@ class Player_Control:
         return owncard
 
     def take(self):#my_Cards
-        print(self.name + '目前手牌:', my_cards(),sep="")
+        print(self.name + '目前手牌:', self.my_cards(),sep="")
         print(self.name,'請問需要加牌嗎？')#'want more? y/n'
         print('需要請輸入y，不需要加入請輸入n')
         if input() == 'y':
