@@ -8,7 +8,7 @@ def card_to_str(card):
         s+="方塊"
     else:
         s+="梅花"
-
+        
     if card[1]==1:
         s+="A"
     elif card[1]==11:
