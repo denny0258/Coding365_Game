@@ -6,7 +6,13 @@
 try:
     from Model.C_Data import shuffle
 except:
-    from C_Data import shuffle
+    try:
+        from C_Data import shuffle
+    except:
+        try:
+            from Model.C_Data import shuffle_fallback as shuffle
+        except:
+            from C_Data import shuffle_fallback as shuffle
 
 
 def Take_card(inputs):
