@@ -5,7 +5,6 @@ money = {}
 
 def Get_Chip(income):
     global dict1, money
-    money = {}
     for j in income.keys():
         if income[j] < 5:
             dict1[j] = False
@@ -16,12 +15,11 @@ def Get_Chip(income):
 
 
 def Winner(winners):
-    global playercount, money
+    global money
     playercount = 0
     list1 = []
     for i in money.values():
         playercount += i
-
     dict2 = {}
     get_chip = []
     for i in (winners.values()):
@@ -31,6 +29,7 @@ def Winner(winners):
     for i in winners.keys():
         if winners[i] == True:
             dict2[i] = average
+    money = {}
     return dict2
 
 def Test(Test_Data):

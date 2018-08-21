@@ -27,6 +27,7 @@ def start():
             pass
         else:
             break
+    print("end")
 
 
 def setup_peoples():
@@ -40,7 +41,7 @@ def setup_peoples():
     for i in range(people_info["computer"]):
         players.append(Player_Control.Computer_Control())
 
-    print("OK, Game start!")
+    print("OK, ready!")
     return players
 
 
@@ -53,12 +54,20 @@ def join_game(players):
         print(player.name, "\tyou have:", money_list[player.id])
 
         if player.join():
+            # reset player status
+            player.cards = []
+            player.life = True
+
+            # ask money for money
             query = {}
             query[player.id] = 5
             result = money.Take_money(query)[player.id]
 
+            # if money result good, join!, else, remove!
             if result:
+                Chip.Get_Chip(query)
                 print(player.name, 'joined!')
+
             else:
                 print(player.name, "your money not enough")
                 remove_these_peoples.append(player)
@@ -86,19 +95,35 @@ def start_game(players):
     print("all players now have two cards.")
 
     # now enter game loop
+    skip_list = []
+    need_take_card = True
+    card = None
 
     while True:
 
-        skip_list = []
-        need_take_card = True
-        card = None
 
         this_round_have_people = False
 
         for player in players:
 
-            if player in skip_list:
+            # here skip who already say no to add card
+            # and who already dies
+            if player in skip_list or player.life == False:
                 continue
+            
+            # 計算有多少玩家遊玩
+            still_playing_players_count = 0
+            for player in players:
+                if player in skip_list or player.life == False:
+                    continue
+                still_playing_players_count+=1
+                
+
+            if still_playing_players_count <=1:
+                # 只剩下一位玩家
+                print('only one player left!')
+                game_running = False
+                break
 
             if need_take_card:
                 card = deal.Take_card({"RE": False})["Card"]
@@ -160,12 +185,12 @@ def start_game(players):
             print(player.name, "贏了耶")
             print(" 贏得", chips[i], "籌碼!")
             print(" 現在總共有", money.Get_money([i])[i], "籌碼!")
-    
+
     print("遊戲結束")
 
 
 def Test(Test_Data):
     pass
 
-
-start()
+if __name__ == "__main__":
+    start()

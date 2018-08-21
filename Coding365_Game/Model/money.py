@@ -21,9 +21,11 @@ def Take_money(withdraw_1):
     global people_Account
     A = {}
     for k, v in withdraw_1.items():
-        if people_Account.get(k, 50) + v < 0:
+        result = people_Account.get(k, 50) - v
+        if result < 0:
             A.update({k: False})
         else:
+            people_Account[k] = result
             A.update({k: True})
 
     return A
