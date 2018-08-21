@@ -46,7 +46,7 @@ class Player_Control:
     def my_cards(self):
         owncard=""
         for i in range(len(self.cards)):
-            owncard+=self.cards[i]+" "
+            owncard+=card_to_str(self.cards[i])+" "
         return owncard
 
     def take(self):#my_Cards
