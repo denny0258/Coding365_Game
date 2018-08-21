@@ -11,11 +11,11 @@ def Check_21(income):
             dict1[j] = False
         else:
             point = 0
-            for k in range(len(income[j]["card"])):
-                if (income[j]["card"])[k][1] > 10:
+            for k in range(len(income[j]["cards"])):
+                if (income[j]["cards"])[k][1] > 10:
                     point += 10
                 else:
-                    point += (income[j]["card"])[k][1]
+                    point += (income[j]["cards"])[k][1]
                 if point > 21:
                     dict1[j] = False
                 else:
