@@ -15,6 +15,7 @@ import Central_control
 def Start():
     Test()
     Test_process()
+    os.system("PAUSE")
     Central_control.start()
     pass
 
