@@ -1,13 +1,13 @@
 def card_to_str(card):
     s=''
     if card[0]=="s":
-        s+="黑桃'
+        s+="黑桃"
     elif card[0]=="h":
-        s+="紅桃'
+        s+="紅桃"
     elif card[0]=="d":
-        s+="方塊'
+        s+="方塊"
     else:
-        s+="梅花'
+        s+="梅花"
 
     if card[1]==1:
         s+="A"
