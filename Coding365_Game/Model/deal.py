@@ -16,6 +16,8 @@ def Take_card(inputs):
 
 
 
+def Take_card():
+    pass
 
 def Test(Test_Data):
     if Test_Data.get("Hello", None) == True:

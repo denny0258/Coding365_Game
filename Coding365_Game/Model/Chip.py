@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 dict1 = {}
 playercount = 0
 money = {}
@@ -33,7 +32,6 @@ def Winner(winners):
         if winners[i] == True:
             dict2[i] = average
     return dict2
-
 
 def Test(Test_Data):
     if Test_Data.get("Hello", None) == True:
