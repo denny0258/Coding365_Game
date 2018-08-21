@@ -43,7 +43,7 @@ class Player_Control:
             print('請輸入玩家名稱:', end="")
             self.name = input()
             print('請問玩家名稱：', self.name, "\n是否正確：(y/n)", end="")
-            if input() == "y" and self.name != "":
+            if input().strip().lower() == "y" and self.name != "":
                 name_Ok = False
         os.system("cls")
         self.id = "player_"+str(count_pla)
@@ -52,7 +52,7 @@ class Player_Control:
     def join(self):
         print('請問是否加入此局？')  # 'join? y/n'
         print('加入請輸入y，拒絕加入請輸入n：', end="")
-        if input() == 'y':
+        if input().strip().lower() == 'y':
             return True
         return False
 
@@ -62,11 +62,11 @@ class Player_Control:
             owncard += card_to_str(self.cards[i])+" "
         return owncard
 
-    def take(self,Temp):  # my_Cards
+    def take(self, Temp):  # my_Cards
         print(self.name + '目前手牌:', self.my_cards(), sep="")
         print(self.name, '請問需要加牌嗎？')  # 'want more? y/n'
         print('需要請輸入y，不需要加入請輸入n：', end="")
-        if input() == 'y':
+        if input().strip().lower() == 'y':
             return True
         return False
 
@@ -101,8 +101,8 @@ class Computer_Control(Player_Control):
     def join(self):
         return True
 
-    def take(self,difficuilty):
-        return computer_AI.hand(self.cards,difficuilty)
+    def take(self, difficuilty):
+        return computer_AI.hand(self.cards, difficuilty)
 
     def add_card(self, card):
         self.cards.append(card)

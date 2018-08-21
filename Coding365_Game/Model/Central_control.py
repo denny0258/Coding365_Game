@@ -30,7 +30,6 @@ def start():
         print("是否在玩下一局? (y/n)")
         print_Data = ""
         if input().strip().lower() == 'y':
-            pass
             os.system("cls")
         else:
             break
@@ -45,7 +44,7 @@ def Setup_Peoples():
         people_info = people.check_people()
         print('請確認玩家數量為：', people_info["player"], "\n電腦數量為：",
               people_info["computer"],  "\n是否正確：(y/n)", end="")
-        if input() == "y":
+        if input().strip().lower() == "y":
             people_Ok = False
     os.system("cls")
     players = [Player_Control.Player_Control()
@@ -76,7 +75,7 @@ def Join_Game(players):
             # -------------------------------------
             while player.name.find("Computer") == -1:
                 chip_money = float(input("請下注(最低下注金額5元):"))
-                if chip_money > 5 and money.Get_money([player.id])[player.id] >= chip_money:
+                if chip_money >= 5 and money.Get_money([player.id])[player.id] >= chip_money:
                     Chip.Get_Chip({player.id: chip_money})
                     money.Take_money({player.id: chip_money})
                     break
@@ -96,8 +95,15 @@ def Join_Game(players):
 # =====================================
 
 
+def Clean_Card(players):
+    for player in players:
+        player.cards = []
+        player.life = True
+
+
 def Get_public_Card(players):
     global print_Data
+    Clean_Card(players)
     print("向各玩家分別派發一張明牌\n\n====================================\n")
     print_Data += "===========================各自的明牌如下===========================\n"
     deal.Take_card({"RE": True})  # 洗牌
@@ -127,10 +133,11 @@ def Want_Get(player):
             }
         })[player.id]
         if player.life == False:
+            os.system("color 0C")
             print(player.name, "爆炸了: ")
             print("你的卡片：", player.my_cards())
             print_Data += player.name + "已死亡\n"
-            os.system("PAUSE")
+            os.system("PAUSE && color 07")
             return "Dead"
         else:
             return None
