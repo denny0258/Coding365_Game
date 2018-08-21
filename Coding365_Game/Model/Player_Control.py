@@ -50,7 +50,7 @@ class Player_Control:
         return owncard
 
     def take(self):#my_Cards
-        print(self.name + '目前手牌:', my_cards(),sep="")
+        print(self.name + '目前手牌:', self.my_cards(),sep="")
         print(self.name,'請問需要加牌嗎？')#'want more? y/n'
         print('需要請輸入y，不需要加入請輸入n')
         if input() == 'y':

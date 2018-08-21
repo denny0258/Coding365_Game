@@ -26,7 +26,6 @@ def check_people():
     dict1["computer"]=AI
     dict1["difficuilty"]=dif
     return dict1
-print(check_people())
 
 #def Test(Test_Data):#
     #if Test_Data.get("Hello", None) == True:
