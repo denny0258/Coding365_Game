@@ -15,7 +15,7 @@ import Central_control
 def Start():
     Test()
     Test_process()
-    # Central_control.start()
+    Central_control.start()
     pass
 
 
