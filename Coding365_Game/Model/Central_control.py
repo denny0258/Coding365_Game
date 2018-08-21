@@ -17,7 +17,7 @@ import Player_Control
 def start():
 
     players = setup_peoples()
-    
+
     while True:
         players = join_game(players)
         start_game(players)
@@ -27,7 +27,7 @@ def start():
             pass
         else:
             break
-        
+
 
 def setup_peoples():
     players = []
@@ -62,7 +62,7 @@ def join_game(players):
             else:
                 print(player.name, "your money not enough")
                 remove_these_peoples.append(player)
-    
+
     return [player for player in players if player not in remove_these_peoples]
 
 
@@ -70,7 +70,6 @@ def start_game(players):
     # game start!
     game_running = True
     need_shuffle = True
-
 
     print("all player will get one card public, one card private")
 
@@ -113,7 +112,7 @@ def start_game(players):
             this_round_have_people = True
 
             if player.take():
-                player.cards.add_card(card)
+                player.add_card(card)
                 need_take_card = True
 
                 life_result = monitor.Check_21({
@@ -124,10 +123,9 @@ def start_game(players):
                 })["p"]
 
                 if life_result == False:
-                    print("player over 21 point: ", player.name)
-                    print("the card he has: ", player.my_cards())
+                    print("爆炸拉: ", player.name)
+                    print("the cards: ", player.my_cards())
                     player.life = False
-
 
             else:
                 skip_list.append(player)
@@ -140,15 +138,30 @@ def start_game(players):
 
     # now find winner
 
-    players_list = []
+    players_list = {}
+    query = {}
 
     for player in players:
-        players_list.append({
+        players_list[player.id] = player
+
+    for player in players:
+        query[player.id] = {
             "life": player.life,
             "cards": player.cards
-        })
+        }
 
-    winners = settle_accounts.winner(players_list)
+    winners = settle_accounts.winner(query)
+    chips = Chip.Winner(winners)
+    money.Add_money(chips)
+
+    for i in players_list:
+        player = players_list[i]
+        if winners[i]:
+            print(player.name, "贏了耶")
+            print(" 贏得", chips[i], "籌碼!")
+            print(" 現在總共有", money.Get_money([i])[i], "籌碼!")
+    
+    print("遊戲結束")
 
 
 def Test(Test_Data):
