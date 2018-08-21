@@ -3,7 +3,14 @@
 try:
     from Model.C_Data import winner as winner_c_module
 except:
-    from C_Data import winner as winner_c_module
+    try:
+        from C_Data import winner as winner_c_module
+    except:
+        try:
+            from Model.C_Data import winner_fallback as winner_c_module
+        except:
+            from C_Data import winner_fallback as winner_c_module
+        
 
 
 def setPlayers(players):
