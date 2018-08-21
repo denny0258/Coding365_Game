@@ -7,8 +7,8 @@ def Check_21(income):
     dict1 = {}
     for j in income.keys():
         dict1[j] = bool1
-        if income[j]["life"] == False:
-            dict1[j] = False
+        if income[j]["life"] == 'False':
+            dict1[j] = "False"
         else:
             point = 0
             for k in range(len(income[j]["Card"])):
@@ -17,9 +17,9 @@ def Check_21(income):
                 else:
                     point += (income[j]["Card"])[k][1]
                 if point > 21:
-                    dict1[j] = False
+                    dict1[j] = "False"
                 else:
-                    dict1[j] = True
+                    dict1[j] = "True"
     return dict1
 
 
