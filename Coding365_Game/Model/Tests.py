@@ -31,11 +31,83 @@ def Test_process():
     print("\n現在測試 money\n")
     Test_money()
     print("\n\n=====================================================\n\n")
+    print("\n現在測試 Leaderboard\n")
+    Test_Leaderboard()
+    print("\n\n=====================================================\n\n")
     print("\n現在測試 people\n")
     Test_people()
 
 # ========================================
 
+
+def Test_Leaderboard():
+    Test_Data_1 = {
+        "Player_1": {
+            "money": 20,
+            "win": False,
+            "cards": [("p", 7), ("l", 10), ("s", 10)]
+        }, "Player_2": {
+            "money": 30,
+            "win": True,
+            "cards": [("k", 7), ("l", 8), ("a", 2), ("t", 3)]
+        }
+    }
+    print("\n測試資料 1:")
+    pprint(Test_Data_1)
+    Leaderboard.Record(Test_Data_1)
+    print("測試結果 1:")
+    pprint(Leaderboard.Get_Leader())
+    # --------------------------------
+    Test_Data_2 = {
+        "Player_1": {
+            "money": 50,
+            "win": True,
+            "cards": [("p", 5), ("l", 2), ("s", 9)]
+        }, "Player_2": {
+            "money": 25,
+            "win": False,
+            "cards": [("k", 8), ("l", 8), ("a", 4), ("t", 3)]
+        }, "Player_3": {
+            "money": 45,
+            "win": False,
+            "cards": [("k", 8), ("l", 7), ("a", 9), ("t", 5)]
+        }, "Player_4": {
+            "money": 5,
+            "win": True,
+            "cards": [("k", 2), ("l", 7), ("a", 4), ("t", 3)]
+        }
+    }
+    print("\n測試資料 2:")
+    pprint(Test_Data_2)
+    Leaderboard.Record(Test_Data_2)
+
+    print("測試結果 2:")
+    pprint(Leaderboard.Get_Leader())
+    # --------------------------------
+
+    Test_Data_3 = {
+        "Player_1": {
+            "money": 25,
+            "win": False,
+            "cards": [("p", 7), ("l", 9), ("s", 10)]
+        }, "Player_2": {
+            "money": 35,
+            "win": True,
+            "cards": [("k", 7), ("l", 8), ("a", 2), ("t", 3)]
+        }, "Player_3": {
+            "money": 15,
+            "win": True,
+            "cards": [("k", 7), ("l", 4), ("a", 2), ("t", 3)]
+        }
+    }
+    print("\n測試資料 3:")
+    pprint(Test_Data_3)
+    Leaderboard.Record(Test_Data_3)
+    print("測試結果 3:")
+    pprint(Leaderboard.Get_Leader())
+
+
+# ========================================
 
 def Test_money():
     # ------------------------------------------------------------
