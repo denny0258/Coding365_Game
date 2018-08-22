@@ -44,7 +44,7 @@ def setPlayers(players):
         for card in player["cards"]:
             winner_c_module.set_card(
                 index, card_index, suit_to_num[card[0]], card[1])
-            print(index, card_index, suit_to_num[card[0]], card[1])
+            # print(index, card_index, suit_to_num[card[0]], card[1])
             card_index += 1
 
         index += 1
