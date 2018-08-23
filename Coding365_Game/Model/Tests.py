@@ -12,7 +12,7 @@ import Central_control
 import settle_accounts
 from pprint import pprint
 
-from print_API import printAPI, inputAPI
+# from print_API import print, inputAPI
 
 # ----------------------------------------------------------------------------
 
@@ -155,16 +155,16 @@ def Test_people():
 
 def Test_monitor():
     # ------------------------------------------------------------
-    Data_1 = {"Player_1": {"life": False, "Card": [('s', 2)]},
-              "Player_2": {"life": True, "Card": [('s', 3), ('h', 5), ('d', 6), ('c', 9)]},
-              "Player_3": {"life": True, "Card": [('d', 3), ('h', 4), ('s', 6), ('c', 7)]},
-              "Player_4": {"life": True, "Card": [('d', 7), ('s', 3), ('s', 7), ('c', 3)]},
-              "Player_5": {"life": True, "Card": [('d', 13), ('s', 6), ('s', 5), ('c', 8)]}
+    Data_1 = {"Player_1": {"life": False, "cards": [('s', 2)]},
+              "Player_2": {"life": True, "cards": [('s', 3), ('h', 5), ('d', 6), ('c', 9)]},
+              "Player_3": {"life": True, "cards": [('d', 3), ('h', 4), ('s', 6), ('c', 7)]},
+              "Player_4": {"life": True, "cards": [('d', 7), ('s', 3), ('s', 7), ('c', 3)]},
+              "Player_5": {"life": True, "cards": [('d', 13), ('s', 6), ('s', 5), ('c', 8)]}
               }
     # ------------------------------------------------------------
-    Data_2 = {"Player_1": {"life": False, "Card": [('s', 7)]},
-              "Player_2": {"life": True, "Card": [('s', 4), ('h', 6), ('d', 7), ('c', 8)]},
-              "Player_3": {"life": True, "Card": [('d', 2), ('s', 3), ('s', 6), ('c', 6)]}
+    Data_2 = {"Player_1": {"life": False, "cards": [('s', 7)]},
+              "Player_2": {"life": True, "cards": [('s', 4), ('h', 6), ('d', 7), ('c', 8)]},
+              "Player_3": {"life": True, "cards": [('d', 2), ('s', 3), ('s', 6), ('c', 6)]}
               }
     print("測試資料 1:")
     pprint(Data_1)
@@ -304,61 +304,61 @@ def Test():
     Test_Data = {"Hello": True}
     try:
         if example.Test(Test_Data).get("World", False) != True:
-            printAPI("ERROR to example")
+            print("ERROR to example")
     except:
-        printAPI("ERROR to example")
+        print("ERROR to example")
     # ================================================================
     try:
         if Central_control.Test(Test_Data).get("World", False) != True:
-            printAPI("ERROR to Central_control")
+            print("ERROR to Central_control")
     except:
-        printAPI("ERROR to Central_control")
+        print("ERROR to Central_control")
     # ================================================================
     try:
         if Chip.Test(Test_Data).get("World", False) != True:
-            printAPI("ERROR to Chip")
+            print("ERROR to Chip")
     except:
-        printAPI("ERROR to Chip")
+        print("ERROR to Chip")
     # ================================================================
     try:
         if deal.Test(Test_Data).get("World", False) != True:
-            printAPI("ERROR to deal")
+            print("ERROR to deal")
     except:
-        printAPI("ERROR to deal")
+        print("ERROR to deal")
     # ================================================================
     try:
         if money.Test(Test_Data).get("World", False) != True:
-            printAPI("ERROR to money")
+            print("ERROR to money")
     except:
-        printAPI("ERROR to money")
+        print("ERROR to money")
     # ================================================================
     try:
         if people.Test(Test_Data).get("World", False) != True:
-            printAPI("ERROR to people")
+            print("ERROR to people")
     except:
-        printAPI("ERROR to people")
+        print("ERROR to people")
     # ================================================================
     try:
         if monitor.Test(Test_Data).get("World", False) != True:
-            printAPI("ERROR to monitor")
+            print("ERROR to monitor")
     except:
-        printAPI("ERROR to monitor")
+        print("ERROR to monitor")
     # ================================================================
     try:
         if computer_AI.Test(Test_Data).get("World", False) != True:
-            printAPI("ERROR to computer_AI")
+            print("ERROR to computer_AI")
     except:
-        printAPI("ERROR to computer_AI")
+        print("ERROR to computer_AI")
     # ================================================================
     try:
         if settle_accounts.Test(Test_Data).get("World", False) != True:
-            printAPI("ERROR to settle_accounts")
+            print("ERROR to settle_accounts")
     except:
-        printAPI("ERROR to settle_accounts")
+        print("ERROR to settle_accounts")
     # ================================================================
     try:
         if Leaderboard.Test(Test_Data).get("World", False) != True:
-            printAPI("ERROR to Leaderboard")
+            print("ERROR to Leaderboard")
     except:
-        printAPI("ERROR to Leaderboard")
+        print("ERROR to Leaderboard")
     # ================================================================
